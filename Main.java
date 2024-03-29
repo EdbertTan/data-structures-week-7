@@ -3,8 +3,7 @@ import java.lang.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int npass=0;
-        String nfind = "aht";
+        String nfind = "two";
         String[][] words = {{"t", "h", "i", "s"},{"w", "a", "t", "s"},{"o", "a", "h", "g"},{"f", "g", "d", "t"}};
         for (int n = 0;n<4;n++){ //horizontal
             StringBuilder str = new StringBuilder();
@@ -14,11 +13,11 @@ public class Main {
             //System.out.println(str);
             if (str.indexOf(nfind)>=0){
                 System.out.println("horizontal row "+(n+1)+" column "+(str.indexOf(nfind)+1));
-                npass=1;
+
             }
         }
 
-        if (npass == 0) {
+
             for (int n = 0; n < 4; n++) { //vertical
                 StringBuilder str = new StringBuilder();
                 for (int m = 0; m < 4; m++) {
@@ -28,11 +27,10 @@ public class Main {
                 //System.out.println(str);
                 if (str.indexOf(nfind)>=0){
                     System.out.println("vertical row "+(str.indexOf(nfind)+1)+" column "+(n+1));
-                    npass=1;
                 }
             }
-        }
-        if (npass == 0) {
+
+
             for (int m = 0; m <= 6; m++) { //diagonal left
                 StringBuilder str = new StringBuilder();
                 int k = m;
@@ -62,11 +60,10 @@ public class Main {
                         nscol=nscol-1;
                     }
                     System.out.println("diagonal right to left row "+(nsrow+1)+" column "+(nscol+1));
-                    npass = 1;
+
                 }
             }
-        }
-        if (npass == 0) {
+
             for (int m = -3; m <= 3; m++) { //diagonal left
                 StringBuilder str = new StringBuilder();
                 int l = 0;
@@ -96,10 +93,9 @@ public class Main {
                         nscol=nscol+1;
                     }
                     System.out.println("diagonal left to right row "+(nsrow+1)+" column "+(nscol+1));
-                    npass = 1;
                 }
             }
-        }
+
 
     }
 }
